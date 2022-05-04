@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+<h3>English - VietNamese Dictionary</h3>
+<input id="h1" type="text">
+<input type="submit" value="Search" onclick="tudien()"><br>
+<p>Result:</p>
+<p id="kq"></p>
+</body>
+</html>
+<script>
+    let dictionary = ["red", "green", "pink", "black", "grey", "white", "violet"];
+    let mean = ["Đỏ", "Xanh", "Hồng", "Đen", "Xám", "Trắng", "Tím"];
+
+    function check(i) {
+        let keyword = document.getElementById('h1').value.toLowerCase();
+        for (let i = 0; i < dictionary.length; i++) {
+            if (dictionary[i] === keyword) return i;
+        }
+        return -1
+    }
+
+    function tudien() {
+        let i = check();
+        if (i === -1) {
+            document.getElementById('kq').innerHTML = "Không tìm thấy"
+        } else {
+            document.getElementById('kq').innerHTML = mean[i]
+        }
+    }
+
+</script>

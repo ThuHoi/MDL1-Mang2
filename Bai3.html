@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển chữ thường sang chữ hoa</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+  let str = prompt('Enter text');
+  let upper = 'ABCDEFGHIK';
+  let lower = 'abcdefghik';
+  let result = [];
+
+  for (let i = 0; i < str.length; i++)
+  {
+     if (upper.indexOf(str[i]) !== -1)
+     {
+         result.push(str[i].toLowerCase());
+     }
+     if (lower.indexOf(str[i]) !== -1)
+     {
+         result.push(str[i].toUpperCase());
+     }
+     else
+     {
+        result.push(str[i]);
+     }
+  }
+  document.write(result.join(''));
+</script>
